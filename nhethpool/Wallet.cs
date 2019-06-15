@@ -43,7 +43,7 @@ namespace nhethpool
 
         public static string[] GetWork(Uri uri)
         {
-            RPCrequest getwork = new RPCrequest("eth_getWork");
+            RPCrequest getwork = new RPCrequest("wtc_getWork");
             getwork.parameters = new object[0];
 
             try
@@ -69,7 +69,7 @@ namespace nhethpool
 
         public static bool SubmitWork(Uri uri, string nonce, string headerhash, string mixhash, out bool result)
         {
-            RPCrequest submitwork = new RPCrequest("eth_submitWork");
+            RPCrequest submitwork = new RPCrequest("wtc_submitWork");
             submitwork.parameters = new string[3];
             ((string[])submitwork.parameters)[0] = "0x" + nonce;
             ((string[])submitwork.parameters)[1] = "0x" + headerhash;
